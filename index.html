@@ -45,7 +45,7 @@
     function valid(u){try{const x=new URL(u);return x.protocol==='https:'&&/^(script\.google\.com|script\.googleusercontent\.com)$/.test(x.hostname)}catch(e){return false}}
     function openApp(u){if(!valid(u)){setup.style.display='flex';urlInput.focus();return}
       localStorage.setItem('ladliAppsScriptUrl',u);setup.style.display='none';frame.src=u}
-    const DEFAULT_URL="https://script.google.com/macros/s/AKfycbz7007Mx_eKCP5nfJTqsi8BMHPPOp1i_itnkAIgbX_kq3N3OoMNSIiWt8WZW_4QHYTH/exec";
+    const DEFAULT_URL="https://script.google.com/macros/s/AKfycbw0ZtmPafzlH8cpB8H2plDklMJDIvdPO6KQ0x2utmdX-3Dc5yBiF6TBUfPEZt7TrP8X/exec";
     const saved=localStorage.getItem('ladliAppsScriptUrl')||DEFAULT_URL; if(saved)openApp(saved);else setup.style.display='flex';
     document.getElementById('save').onclick=()=>openApp(urlInput.value.trim());
     document.getElementById('change').onclick=()=>{urlInput.value=localStorage.getItem('ladliAppsScriptUrl')||'';setup.style.display='flex'};
